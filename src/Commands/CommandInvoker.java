@@ -13,8 +13,7 @@ public class CommandInvoker {
         try {
             Command command = commandMap.get(commandName);
             command.execute();
-        }
-        catch (IllegalStateException | NullPointerException ex) {
+        } catch (IllegalStateException | NullPointerException ex) {
             System.out.println("Не существует команды " + commandName + ". Для справки используйте – help");
         }
     }
