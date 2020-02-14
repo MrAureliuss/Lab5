@@ -10,8 +10,8 @@ public class ConsoleManager {
         CommandReceiver commandReceiver = new CommandReceiver();
         CommandInvoker commandInvoker = new CommandInvoker();
 
-        Command help = new Help(commandReceiver);
-        commandInvoker.register("help", help);
+        commandInvoker.register("help", new Help(commandReceiver));
+        commandInvoker.register("add", new Add(commandReceiver));
 
         try(Scanner scanner = new Scanner(System.in)) {
             while (scanner.hasNext()) {

@@ -5,11 +5,15 @@ public class CommandReceiver {
         CommandInvoker.getCommandMap().forEach((name, command) -> command.writeInfo());
     }
 
-    public void info() {
+    public void info() { // добавить класс
 
     }
 
-    public void show() {
+    public void show() {  // добавить класс
+
+    }
+
+    public void add() {
 
     }
 
