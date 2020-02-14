@@ -1,5 +1,7 @@
 package Commands;
 
+import Commands.Utils.ConsoleReaders;
+
 public class CommandReceiver {
     public void help() {
         CommandInvoker.getCommandMap().forEach((name, command) -> command.writeInfo());
@@ -14,7 +16,7 @@ public class CommandReceiver {
     }
 
     public void add() {
-
+        String name = ConsoleReaders.stringReader("Введите имя группы: ", false);
     }
 
 }

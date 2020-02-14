@@ -15,7 +15,7 @@ public class StudyGroup {
     private Person groupAdmin; //Поле может быть null
 
     public StudyGroup(String name, Coordinates coordinates, Integer studentsCount, FormOfEducation formOfEducation, Semester semesterEnum, Person groupAdmin) {
-        this.id = new Random().nextInt((int) (pow(2, 31)-1));
+        this.id = new Random().nextInt(Integer.MAX_VALUE);
         this.name = name;
         this.coordinates = coordinates;
         this.creationDate = java.time.ZonedDateTime.now();
