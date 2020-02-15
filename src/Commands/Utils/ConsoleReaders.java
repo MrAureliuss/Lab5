@@ -1,12 +1,15 @@
 package Commands.Utils;
 
+import BasicClasses.Country;
+
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ConsoleReaders {
     public static String stringReader(String messageForConsole, boolean canBeNull) {
         Scanner in = new Scanner(System.in);
         System.out.print(messageForConsole);
-        String readString = in.nextLine();
+        String readString = in.nextLine().trim();
         if(!canBeNull && readString.equals("")) {
             while (readString.equals("")) {
                 System.out.print("Данное поле не может быть пустым. " + messageForConsole);
@@ -47,7 +50,10 @@ public class ConsoleReaders {
         return readFloat;
     }
 
-    public static Enum enumReader(String messageForConsole, boolean canBeNull, Enum enumForRead) {
+    public static Country countryReader(boolean canBeNull) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите страну из представленных(" + Arrays.asList(Country.values()) + "): ");
+        String toContains = in.nextLine().trim();
 
     }
 }
