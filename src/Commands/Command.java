@@ -2,5 +2,5 @@ package Commands;
 
 public abstract class Command {
     protected abstract void writeInfo();
-    protected abstract void execute();
+    protected abstract void execute(String[] args);
 }

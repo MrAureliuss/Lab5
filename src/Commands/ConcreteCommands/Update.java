@@ -11,8 +11,8 @@ public class Update extends Command {
     }
 
     @Override
-    protected void execute() {
-        commandReceiver.update();
+    protected void execute(String[] args) {
+        commandReceiver.update(args[1]);
     }
 
     @Override

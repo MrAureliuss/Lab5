@@ -42,7 +42,7 @@ public class CollectionManager {
         });
     }
 
-    public static void update(StudyGroup studyGroup, Integer elementId) {
+    public static void update(StudyGroup groupToUpdate, Integer elementId) {
 
     }
 }

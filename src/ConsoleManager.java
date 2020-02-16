@@ -21,7 +21,7 @@ public class ConsoleManager {
 
         try(Scanner scanner = new Scanner(System.in)) {
             while (scanner.hasNext()) {
-                commandInvoker.executeCommand(scanner.nextLine());
+                commandInvoker.executeCommand(scanner.nextLine().split(" "));
             }
         }
     }

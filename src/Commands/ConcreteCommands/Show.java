@@ -11,7 +11,7 @@ public class Show extends Command {
     }
 
     @Override
-    protected void execute() {
+    protected void execute(String[] args) {
         commandReceiver.show();
     }
 
