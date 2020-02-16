@@ -9,9 +9,9 @@ public class CountryReader {
         return Arrays.stream(Country.values()).anyMatch((country) -> country.name().equals(toContains));
     }
 
-    public static Country read(boolean canBeNull) {
+    public static Country read(String messageForConsole, boolean canBeNull) {
         Scanner in = new Scanner(System.in);
-        System.out.print("Введите страну из представленных(" + Arrays.asList(Country.values()) + "): ");
+        System.out.print(messageForConsole + " Выберите страну из представленных(" + Arrays.asList(Country.values()) + "): ");
         String toContains = in.nextLine().trim();
 
         if ((!checkExist(toContains)) && !canBeNull && !toContains.equals("") || !canBeNull && toContains.equals("") || canBeNull && !toContains.equals("")) {

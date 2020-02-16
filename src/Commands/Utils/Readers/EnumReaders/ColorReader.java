@@ -9,9 +9,9 @@ public class ColorReader {
         return Arrays.stream(Color.values()).anyMatch((color) -> color.name().equals(toContains));
     }
 
-    public static Color read(boolean canBeNull) {
+    public static Color read(String messageForConsole, boolean canBeNull) {
         Scanner in = new Scanner(System.in);
-        System.out.print("Введите страну из представленных(" + Arrays.asList(Color.values()) + "): ");
+        System.out.print(messageForConsole + " Выберите цвет из представленных(" + Arrays.asList(Color.values()) + "): ");
         String toContains = in.nextLine().trim();
 
         if ((!checkExist(toContains)) && !canBeNull && !toContains.equals("") || !canBeNull && toContains.equals("") || canBeNull && !toContains.equals("")) {
