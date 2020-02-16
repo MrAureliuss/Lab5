@@ -11,7 +11,7 @@ public class SemesterReader {
 
     public static Semester read(boolean canBeNull) {
         Scanner in = new Scanner(System.in);
-        System.out.print("Введите семестр из представленных(" + Arrays.asList(Semester.values()) + "): ");
+        System.out.print("Введите страну из представленных(" + Arrays.asList(Semester.values()) + "): ");
         String toContains = in.nextLine().trim();
 
         if ((!checkExist(toContains)) && !canBeNull && !toContains.equals("") || !canBeNull && toContains.equals("") || canBeNull && !toContains.equals("")) {
