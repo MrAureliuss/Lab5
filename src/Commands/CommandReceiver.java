@@ -1,6 +1,8 @@
 package Commands;
 
-import Commands.Utils.ConsoleReaders;
+import BasicClasses.Country;
+import Commands.Utils.Readers.EnumReaders.*;
+import Commands.Utils.Readers.PrimitiveAndReferenceReaders.*;
 
 public class CommandReceiver {
     public void help() {
@@ -16,7 +18,10 @@ public class CommandReceiver {
     }
 
     public void add() {
-        String name = ConsoleReaders.stringReader("Введите имя группы: ", false);
+        String name = StringReader.read("Введите имя группы: ", false);
+        Integer x = RefIntReader.read("Введите X: ", false, 531, "MAX");
+        float y = PrimitiveFloatReader.read("Введите Y: ", -653f, "MIN");
+        Country country = CountryReader.read(false);
     }
 
 }
