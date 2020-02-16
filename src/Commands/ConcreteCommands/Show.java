@@ -12,6 +12,9 @@ public class Show extends Command {
 
     @Override
     protected void execute(String[] args) {
+        if (args.length > 1) {
+            System.out.println("Введен не нужный аргумент. Команда приведена к базовой команде show.");
+        }
         commandReceiver.show();
     }
 

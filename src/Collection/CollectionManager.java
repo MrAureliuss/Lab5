@@ -1,7 +1,6 @@
 package Collection;
 
-import BasicClasses.StudyGroup;
-
+import BasicClasses.*;
 import java.time.ZonedDateTime;
 import java.util.LinkedList;
 
@@ -10,7 +9,11 @@ public class CollectionManager {
     private static ZonedDateTime creationDate;
 
     public static void initList() {
-        if (linkedList == null) { linkedList = new LinkedList<StudyGroup>(); creationDate = ZonedDateTime.now(); }
+        if (linkedList == null) { linkedList = new LinkedList<>(); creationDate = ZonedDateTime.now(); }
+    }
+
+    static LinkedList<StudyGroup> getLinkedList() {
+        return linkedList;
     }
 
     public static void add(StudyGroup studyGroup) {
@@ -43,6 +46,18 @@ public class CollectionManager {
     }
 
     public static void update(StudyGroup groupToUpdate, Integer elementId) {
-
+        linkedList.forEach(studyGroup -> {
+            if (studyGroup.getId().equals(elementId)) {
+                studyGroup.setName(groupToUpdate.getName());
+                studyGroup.setCoordinates(groupToUpdate.getCoordinates());
+                studyGroup.setStudentsCount(groupToUpdate.getStudentsCount());
+                studyGroup.setFormOfEducation(groupToUpdate.getFormOfEducation());
+                studyGroup.setSemesterEnum(groupToUpdate.getSemesterEnum());
+                studyGroup.setGroupAdmin(groupToUpdate.getGroupAdmin());
+            }
+            else {
+                System.out.println("Элемента с " + elementId + " не существует.");
+            }
+        });
     }
 }

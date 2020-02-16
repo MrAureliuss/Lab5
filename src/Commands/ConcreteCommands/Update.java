@@ -12,7 +12,8 @@ public class Update extends Command {
 
     @Override
     protected void execute(String[] args) {
-        commandReceiver.update(args[1]);
+        if (args.length == 2) { commandReceiver.update(args[1]); }
+        else { System.out.println("Некорректное количество аргументов. Для справки напишите help."); }
     }
 
     @Override

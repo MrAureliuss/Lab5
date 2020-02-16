@@ -16,4 +16,12 @@ public class Coordinates {
     public float getY() {
         return y;
     }
+
+    public void setX(Integer x) {
+        this.x = x;
+    }
+
+    public void setY(float y) {
+        this.y = y;
+    }
 }

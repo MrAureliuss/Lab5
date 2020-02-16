@@ -1,10 +1,8 @@
 package Commands;
 
-import BasicClasses.Country;
 import Collection.CollectionManager;
+import Collection.CollectionUtils;
 import Commands.Utils.Creaters.ElementCreater;
-import Commands.Utils.Readers.EnumReaders.*;
-import Commands.Utils.Readers.PrimitiveAndReferenceReaders.*;
 
 public class CommandReceiver {
     public void help() {
@@ -27,7 +25,8 @@ public class CommandReceiver {
         Integer groupId;
         try {
             groupId = Integer.parseInt(ID);
-            CollectionManager.update(ElementCreater.createStudyGroup(), groupId);
+            if (CollectionUtils.checkExist(groupId)) { CollectionManager.update(ElementCreater.createStudyGroup(), groupId); }
+            else {System.out.println("Элемента с таким ID нет в коллекции.");}
         } catch (NumberFormatException e) {
             System.out.println("Команда не выполнена. Вы ввели некорректный аргумент.");
         }
