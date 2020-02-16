@@ -6,7 +6,7 @@ import Commands.CommandReceiver;
 public class Help extends Command {
     private final CommandReceiver commandReceiver;
 
-    public Help(CommandReceiver commandReceiver) {
+    public Help (CommandReceiver commandReceiver) {
         this.commandReceiver = commandReceiver;
     }
 

@@ -6,13 +6,13 @@ import Commands.CommandReceiver;
 public class Info extends Command {
     private final CommandReceiver commandReceiver;
 
-    public Info(CommandReceiver commandReceiver) {
+    public Info (CommandReceiver commandReceiver) {
         this.commandReceiver = commandReceiver;
     }
 
     @Override
     protected void execute() {
-        commandReceiver.help();
+        commandReceiver.info();
     }
 
     @Override
