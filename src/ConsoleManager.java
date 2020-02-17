@@ -5,10 +5,9 @@ import Collection.CollectionManager;
 import Commands.CommandInvoker;
 import Commands.CommandReceiver;
 import Commands.ConcreteCommands.*;
-import Collection.CollectionManager;
 
-public class ConsoleManager {
-    public void startInteractiveMode() throws IOException {
+class ConsoleManager {
+    void startInteractiveMode() throws IOException {
         CommandReceiver commandReceiver = new CommandReceiver();
         CommandInvoker commandInvoker = new CommandInvoker();
         CollectionManager.initList();
@@ -18,9 +17,13 @@ public class ConsoleManager {
         commandInvoker.register("info", new Info(commandReceiver));
         commandInvoker.register("show", new Show(commandReceiver));
         commandInvoker.register("update", new Update(commandReceiver));
+        commandInvoker.register("remove_by_id", new RemoveByID(commandReceiver));
+        commandInvoker.register("clear", new Clear(commandReceiver));
+        commandInvoker.register("exit", new Exit(commandReceiver));
+        commandInvoker.register("head", new Head(commandReceiver));
 
         try(Scanner scanner = new Scanner(System.in)) {
-            while (scanner.hasNext()) {
+            while (scanner.hasNextLine()) {
                 commandInvoker.executeCommand(scanner.nextLine().split(" "));
             }
         }

@@ -4,7 +4,7 @@ import BasicClasses.*;
 import Commands.Utils.Readers.EnumReaders.*;
 import Commands.Utils.Readers.PrimitiveAndReferenceReaders.*;
 
-public class ElementCreater {
+public class ElementCreator {
     public static StudyGroup createStudyGroup() {
         String name = StringReader.read("Введите имя группы: ", false);
         Integer x = RefIntReader.read("Введите X: ", false, 531, "MAX");
