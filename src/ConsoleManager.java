@@ -21,6 +21,7 @@ class ConsoleManager {
         commandInvoker.register("clear", new Clear(commandReceiver));
         commandInvoker.register("exit", new Exit(commandReceiver));
         commandInvoker.register("head", new Head(commandReceiver));
+        commandInvoker.register("remove_greater", new RemoveGreater(commandReceiver));
 
         try(Scanner scanner = new Scanner(System.in)) {
             while (scanner.hasNextLine()) {

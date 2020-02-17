@@ -59,4 +59,8 @@ public class CommandReceiver {
     public void head() {
         CollectionManager.head();
     }
+
+    public void remove_greater() {
+        CollectionManager.remove_greater(ElementCreator.createStudyGroup());
+    }
 }

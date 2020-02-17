@@ -58,4 +58,9 @@ public class CollectionManager {
         if (linkedList.size() > 0) { CollectionUtils.display(linkedList.getFirst()); }
         else { System.out.println("Коллекция пуста."); }
     }
+
+    public static void remove_greater(StudyGroup studyGroup) {
+        // СДЕЛАТЬ
+    }
+
 }
