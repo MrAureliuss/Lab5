@@ -2,6 +2,8 @@ package Collection;
 
 import BasicClasses.*;
 import java.time.ZonedDateTime;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 
@@ -77,7 +79,8 @@ public class CollectionManager {
     }
 
     public static void min_by_semester_enum() {
-        Comparator<Semester> comparator = Comparator.comparing(Semester::getValue);
+        CollectionUtils.display(Collections.min(linkedList,
+                Comparator.comparing(studyGroup -> studyGroup.getSemesterEnum().getValue())));
     }
 
 }

@@ -69,6 +69,6 @@ public class CommandReceiver {
     }
 
     public void min_by_semester_enum() {
-        CollectionManager.remove_lower(ElementCreator.createStudyGroup());
+        CollectionManager.min_by_semester_enum();
     }
 }
