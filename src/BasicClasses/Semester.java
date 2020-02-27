@@ -7,7 +7,7 @@ public enum Semester {
 
     private final int value;
 
-    private Semester(int value) {
+    Semester(int value) {
         this.value = value;
     }
 

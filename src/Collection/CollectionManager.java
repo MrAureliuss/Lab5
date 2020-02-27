@@ -79,8 +79,20 @@ public class CollectionManager {
     }
 
     public static void min_by_semester_enum() {
-        CollectionUtils.display(Collections.min(linkedList,
-                Comparator.comparing(studyGroup -> studyGroup.getSemesterEnum().getValue())));
+        if (linkedList.size() > 0) {
+            CollectionUtils.display(Collections.min(linkedList,
+                    Comparator.comparingInt(studyGroup -> studyGroup.getSemesterEnum().getValue())));
+        } else { System.out.println("Коллекция пуста."); }
     }
 
+    public static void maxByGroupAdmin() {
+        if (linkedList.size() > 0) {
+            CollectionUtils.display(Collections.max(linkedList,
+                    Comparator.comparingInt(studyGroup -> studyGroup.getGroupAdmin().compareValue())));
+        } else { System.out.println("Коллекция пуста."); }
+    }
+
+    public static void countByGroupAdmin(Person groupAdmin) {
+
+    }
 }

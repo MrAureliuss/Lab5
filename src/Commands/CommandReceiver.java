@@ -71,4 +71,12 @@ public class CommandReceiver {
     public void min_by_semester_enum() {
         CollectionManager.min_by_semester_enum();
     }
+
+    public void maxByGroupAdmin() {
+        CollectionManager.maxByGroupAdmin();
+    }
+
+    public void countByGroupAdmin() {
+        CollectionManager.countByGroupAdmin(ElementCreator.createPerson());
+    }
 }

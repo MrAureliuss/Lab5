@@ -35,23 +35,7 @@ public class Person {
         return nationality;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public void setEyeColor(Color eyeColor) {
-        this.eyeColor = eyeColor;
-    }
-
-    public void setHairColor(Color hairColor) {
-        this.hairColor = hairColor;
-    }
-
-    public void setNationality(Country nationality) {
-        this.nationality = nationality;
+    public int compareValue() {
+        return this.name.length() + height;
     }
 }
