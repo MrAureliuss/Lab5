@@ -2,7 +2,6 @@ package Collection;
 
 import BasicClasses.*;
 import java.time.ZonedDateTime;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -93,6 +92,6 @@ public class CollectionManager {
     }
 
     public static void countByGroupAdmin(Person groupAdmin) {
-
+        System.out.println(linkedList.stream().filter(studyGroup -> studyGroup.getGroupAdmin().equals(groupAdmin)).count());
     }
 }

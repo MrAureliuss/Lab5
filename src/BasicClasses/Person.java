@@ -38,4 +38,19 @@ public class Person {
     public int compareValue() {
         return this.name.length() + height;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) return true;
+        if (!(obj instanceof Person)) {
+            return false;
+        }
+
+        Person person = (Person) obj;
+        return name.equals(person.getName()) &&
+                height == person.getHeight() &&
+                eyeColor.equals(person.getEyeColor()) &&
+                hairColor.equals(person.getHairColor()) &&
+                nationality.equals(person.getNationality());
+    }
 }
