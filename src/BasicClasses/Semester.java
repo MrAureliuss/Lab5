@@ -1,7 +1,17 @@
 package BasicClasses;
 
 public enum Semester {
-    THIRD,
-    FOURTH,
-    FIFTH;
+    THIRD(3),
+    FOURTH(4),
+    FIFTH(5);
+
+    private final int value;
+
+    private Semester(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
 }

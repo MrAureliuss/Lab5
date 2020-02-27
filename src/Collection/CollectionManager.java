@@ -2,6 +2,7 @@ package Collection;
 
 import BasicClasses.*;
 import java.time.ZonedDateTime;
+import java.util.Comparator;
 import java.util.LinkedList;
 
 public class CollectionManager {
@@ -73,6 +74,10 @@ public class CollectionManager {
                 linkedList.remove(listStudyGroup);
             } else { System.out.println("Таких элементов не найдено"); }
         });
+    }
+
+    public static void min_by_semester_enum() {
+        Comparator<Semester> comparator = Comparator.comparing(Semester::getValue);
     }
 
 }

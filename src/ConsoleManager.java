@@ -23,6 +23,7 @@ class ConsoleManager {
         commandInvoker.register("head", new Head(commandReceiver));
         commandInvoker.register("remove_greater", new RemoveGreater(commandReceiver));
         commandInvoker.register("remove_lower", new RemoveLower(commandReceiver));
+        commandInvoker.register("min_by_semester_enum", new MinBySemesterEnum(commandReceiver));
 
         try(Scanner scanner = new Scanner(System.in)) {
             while (scanner.hasNextLine()) {
