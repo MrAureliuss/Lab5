@@ -26,6 +26,7 @@ class ConsoleManager {
         commandInvoker.register("min_by_semester_enum", new MinBySemesterEnum(commandReceiver));
         commandInvoker.register("max_by_group_admin", new MaxByGroupAdmin(commandReceiver));
         commandInvoker.register("count_by_group_admin", new CountByGroupAdmin(commandReceiver));
+        commandInvoker.register("execute_script", new ExecuteScript(commandReceiver));
 
         try(Scanner scanner = new Scanner(System.in)) {
             while (scanner.hasNextLine()) {

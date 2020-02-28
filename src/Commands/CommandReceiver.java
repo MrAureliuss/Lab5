@@ -4,6 +4,8 @@ import Collection.CollectionManager;
 import Collection.CollectionUtils;
 import Commands.Utils.Creaters.ElementCreator;
 
+import java.io.*;
+
 public class CommandReceiver {
     public void help() {
         CommandInvoker.getCommandMap().forEach((name, command) -> command.writeInfo());
@@ -79,4 +81,10 @@ public class CommandReceiver {
     public void countByGroupAdmin() {
         CollectionManager.countByGroupAdmin(ElementCreator.createPerson());
     }
+
+//    public void executeScript(String path) throws IOException {
+//        try (BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(path))) {
+//            while (bufferedInputStream.re)
+//        }
+//    }
 }
