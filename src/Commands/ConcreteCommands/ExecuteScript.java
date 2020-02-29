@@ -12,7 +12,7 @@ public class ExecuteScript extends Command {
 
     @Override
     protected void execute(String[] args) {
-        if (args.length == 2) { commandReceiver.update(args[1]); }
+        if (args.length == 2) { commandReceiver.executeScript(args[1]); }
         else { System.out.println("Некорректное количество аргументов. Для справки напишите help."); }
     }
 

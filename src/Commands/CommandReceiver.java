@@ -7,8 +7,14 @@ import Commands.Utils.Creaters.ElementCreator;
 import java.io.*;
 
 public class CommandReceiver {
+    private final CommandInvoker commandInvoker;
+
+    public CommandReceiver(CommandInvoker commandInvoker) {
+        this.commandInvoker = commandInvoker;
+    }
+
     public void help() {
-        CommandInvoker.getCommandMap().forEach((name, command) -> command.writeInfo());
+        commandInvoker.getCommandMap().forEach((name, command) -> command.writeInfo());
     }
 
     public void info() { // добавить класс
@@ -82,9 +88,13 @@ public class CommandReceiver {
         CollectionManager.countByGroupAdmin(ElementCreator.createPerson());
     }
 
-//    public void executeScript(String path) throws IOException {
-//        try (BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(path))) {
-//            while (bufferedInputStream.re)
-//        }
-//    }
+    public void executeScript(String path) {
+        try (DataInputStream dataInputStream = new DataInputStream(new BufferedInputStream(new FileInputStream("C:\\Users\\avelok\\IdeaProjects\\Lab5\\input.txt")))) {
+            while (dataInputStream.available() != 0) {
+                commandInvoker.executeCommand(dataInputStream.readLine().split(" "));
+            }
+        } catch (IOException e) {
+            System.out.println("Ошибка! " + e.getMessage());
+        }
+    }
 }

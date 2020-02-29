@@ -8,8 +8,8 @@ import Commands.ConcreteCommands.*;
 
 class ConsoleManager {
     void startInteractiveMode() throws IOException {
-        CommandReceiver commandReceiver = new CommandReceiver();
         CommandInvoker commandInvoker = new CommandInvoker();
+        CommandReceiver commandReceiver = new CommandReceiver(commandInvoker);
         CollectionManager.initList();
 
         commandInvoker.register("help", new Help(commandReceiver));

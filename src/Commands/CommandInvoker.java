@@ -3,7 +3,7 @@ package Commands;
 import java.util.HashMap;
 
 public class CommandInvoker {
-    private static final HashMap<String, Command> commandMap = new HashMap<>();
+    private final HashMap<String, Command> commandMap = new HashMap<>();
 
     public void register(String commandName, Command command) {
         commandMap.put(commandName, command);
@@ -20,7 +20,7 @@ public class CommandInvoker {
         }
     }
 
-    static HashMap<String, Command> getCommandMap() {
+    HashMap<String, Command> getCommandMap() {
         return commandMap;
     }
 }
