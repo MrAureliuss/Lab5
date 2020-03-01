@@ -14,7 +14,7 @@ public class CollectionManager {
         if (linkedList == null) { linkedList = new LinkedList<>(); creationDate = ZonedDateTime.now(); }
     }
 
-    static LinkedList<StudyGroup> getLinkedList() {
+    public static LinkedList<StudyGroup> getLinkedList() {
         return linkedList;
     }
 

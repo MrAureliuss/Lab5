@@ -3,6 +3,7 @@ package Commands;
 import Collection.CollectionManager;
 import Collection.CollectionUtils;
 import Commands.Utils.Creaters.ElementCreator;
+import Commands.Utils.JSON.ParserJson;
 
 import java.io.*;
 
@@ -96,5 +97,9 @@ public class CommandReceiver {
         } catch (IOException e) {
             System.out.println("Ошибка! " + e.getMessage());
         }
+    }
+
+    public void save() {
+        ParserJson.collectionToJson();
     }
 }
