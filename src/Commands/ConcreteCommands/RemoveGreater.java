@@ -3,6 +3,9 @@ package Commands.ConcreteCommands;
 import Commands.Command;
 import Commands.CommandReceiver;
 
+/**
+ * Конкретная команда удаления объектов, превышающих заданный.
+ */
 public class RemoveGreater extends Command {
     private final CommandReceiver commandReceiver;
 

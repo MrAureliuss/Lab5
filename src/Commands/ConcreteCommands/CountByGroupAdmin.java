@@ -3,6 +3,9 @@ package Commands.ConcreteCommands;
 import Commands.Command;
 import Commands.CommandReceiver;
 
+/**
+ * Конкретная команда подсчета по админу.
+ */
 public class CountByGroupAdmin extends Command {
     private final CommandReceiver commandReceiver;
 

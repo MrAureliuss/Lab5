@@ -3,6 +3,9 @@ package Commands.ConcreteCommands;
 import Commands.Command;
 import Commands.CommandReceiver;
 
+/**
+ * Конкретная команда очистки коллекции.
+ */
 public class Clear extends Command {
     private final CommandReceiver commandReceiver;
 

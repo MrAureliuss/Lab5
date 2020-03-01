@@ -3,6 +3,9 @@ package Commands.ConcreteCommands;
 import Commands.Command;
 import Commands.CommandReceiver;
 
+/**
+ * Конкретная команда вывода первого элемента коллекции.
+ */
 public class Head extends Command {
     private final CommandReceiver commandReceiver;
 

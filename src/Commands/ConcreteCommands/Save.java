@@ -3,6 +3,9 @@ package Commands.ConcreteCommands;
 import Commands.Command;
 import Commands.CommandReceiver;
 
+/**
+ * Конкретная команда сохранения.
+ */
 public class Save extends Command {
     private final CommandReceiver commandReceiver;
 

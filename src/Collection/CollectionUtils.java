@@ -2,6 +2,9 @@ package Collection;
 
 import BasicClasses.StudyGroup;
 
+/**
+ * Класс, содержащий утилиты для работы с коллекцией.
+ */
 public class CollectionUtils {
     public static boolean checkExist(Integer ID) {
         for (StudyGroup studyGroup:CollectionManager.getLinkedList()) {

@@ -2,6 +2,9 @@ package Commands.Utils.Readers.PrimitiveAndReferenceReaders;
 
 import java.util.Scanner;
 
+/**
+ * Считыватель класса-оболочки int.
+ */
 public class RefIntReader {
     public static Integer read(String messageForConsole, boolean canBeNull, int limit, String type) {
         System.out.print(messageForConsole);

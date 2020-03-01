@@ -3,6 +3,9 @@ package Commands.ConcreteCommands;
 import Commands.Command;
 import Commands.CommandReceiver;
 
+/**
+ * Конкретная команда обновления объекта.
+ */
 public class Update extends Command {
     private final CommandReceiver commandReceiver;
 

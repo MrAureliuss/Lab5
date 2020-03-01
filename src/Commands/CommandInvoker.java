@@ -2,6 +2,9 @@ package Commands;
 
 import java.util.HashMap;
 
+/**
+ * Инвокер(вызыватель), выполяет команды. Хранит зарегистрированные команды.
+ */
 public class CommandInvoker {
     private final HashMap<String, Command> commandMap = new HashMap<>();
 

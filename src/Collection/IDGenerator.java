@@ -3,6 +3,9 @@ package Collection;
 import java.util.HashSet;
 import java.util.Random;
 
+/**
+ * Класс-генератор ID.
+ */
 public class IDGenerator {
     private static HashSet<Integer> hashSetId = new HashSet<>();
 

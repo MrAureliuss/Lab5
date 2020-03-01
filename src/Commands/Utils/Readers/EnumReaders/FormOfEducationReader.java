@@ -4,6 +4,9 @@ import BasicClasses.FormOfEducation;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * Считыватель формы обучения.
+ */
 public class FormOfEducationReader {
     private static boolean checkExist(String toContains) {
         return Arrays.stream(FormOfEducation.values()).anyMatch((formOfEducation) -> formOfEducation.name().equals(toContains));

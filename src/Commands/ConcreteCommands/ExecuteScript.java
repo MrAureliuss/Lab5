@@ -3,6 +3,9 @@ package Commands.ConcreteCommands;
 import Commands.Command;
 import Commands.CommandReceiver;
 
+/**
+ * Конкретная команда выполнения скрипта.
+ */
 public class ExecuteScript extends Command {
     private final CommandReceiver commandReceiver;
 

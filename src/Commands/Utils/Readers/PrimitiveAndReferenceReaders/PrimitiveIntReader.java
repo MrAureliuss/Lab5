@@ -2,6 +2,9 @@ package Commands.Utils.Readers.PrimitiveAndReferenceReaders;
 
 import java.util.Scanner;
 
+/**
+ * Считыватель примитивного int.
+ */
 public class PrimitiveIntReader {
     public static int read(String messageForConsole, int limit, String type) {
         System.out.print(messageForConsole);

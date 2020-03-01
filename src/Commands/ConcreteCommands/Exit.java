@@ -3,6 +3,9 @@ package Commands.ConcreteCommands;
 import Commands.Command;
 import Commands.CommandReceiver;
 
+/**
+ * Конкретная команда выхода.
+ */
 public class Exit extends Command {
     private final CommandReceiver commandReceiver;
 

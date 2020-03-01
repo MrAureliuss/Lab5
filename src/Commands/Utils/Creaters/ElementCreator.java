@@ -4,6 +4,9 @@ import BasicClasses.*;
 import Commands.Utils.Readers.EnumReaders.*;
 import Commands.Utils.Readers.PrimitiveAndReferenceReaders.*;
 
+/**
+ * Классб содержащий методы для создания группы и человека.
+ */
 public class ElementCreator {
     public static StudyGroup createStudyGroup() {
         String name = StringReader.read("Введите имя группы: ", false);

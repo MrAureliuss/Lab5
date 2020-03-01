@@ -3,6 +3,9 @@ package Commands.ConcreteCommands;
 import Commands.Command;
 import Commands.CommandReceiver;
 
+/**
+ * Конкретная команда удаления по ID.
+ */
 public class RemoveByID extends Command {
     private final CommandReceiver commandReceiver;
 

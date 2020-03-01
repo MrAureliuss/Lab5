@@ -4,6 +4,9 @@ import BasicClasses.Color;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * Считыватель цвета.
+ */
 public class ColorReader {
     private static boolean checkExist(String toContains) {
         return Arrays.stream(Color.values()).anyMatch((color) -> color.name().equals(toContains));

@@ -6,6 +6,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 
+/**
+ * Менеджер коллекцией. Описывает логику команд, выполняющих работу с коллекцией.
+ */
 public class CollectionManager {
     private static LinkedList<StudyGroup> linkedList;
     private static ZonedDateTime creationDate;

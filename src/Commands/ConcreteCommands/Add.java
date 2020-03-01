@@ -3,6 +3,9 @@ package Commands.ConcreteCommands;
 import Commands.Command;
 import Commands.CommandReceiver;
 
+/**
+ * Конкретная команда добавления в коллекцию.
+ */
 public class Add extends Command {
     private final CommandReceiver commandReceiver;
 

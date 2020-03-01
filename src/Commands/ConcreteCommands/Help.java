@@ -3,6 +3,9 @@ package Commands.ConcreteCommands;
 import Commands.Command;
 import Commands.CommandReceiver;
 
+/**
+ * Конкретная команда помощи.
+ */
 public class Help extends Command {
     private final CommandReceiver commandReceiver;
 

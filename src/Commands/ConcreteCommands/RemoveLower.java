@@ -3,6 +3,9 @@ package Commands.ConcreteCommands;
 import Commands.Command;
 import Commands.CommandReceiver;
 
+/**
+ * Конкретная команда удаления объектов, меньше заданного.
+ */
 public class RemoveLower extends Command {
     private final CommandReceiver commandReceiver;
 

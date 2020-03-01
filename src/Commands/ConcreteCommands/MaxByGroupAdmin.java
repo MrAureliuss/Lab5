@@ -2,7 +2,9 @@ package Commands.ConcreteCommands;
 
 import Commands.Command;
 import Commands.CommandReceiver;
-
+/**
+ * Конкретная команда подсчета по "максимальному" админу.
+ */
 public class MaxByGroupAdmin extends Command {
     private final CommandReceiver commandReceiver;
 

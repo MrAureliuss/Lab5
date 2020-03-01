@@ -3,6 +3,9 @@ package Commands.ConcreteCommands;
 import Commands.Command;
 import Commands.CommandReceiver;
 
+/**
+ * Конкретная команда получения информации о коллекции.
+ */
 public class Info extends Command {
     private final CommandReceiver commandReceiver;
 

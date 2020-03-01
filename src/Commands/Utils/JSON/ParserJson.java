@@ -12,6 +12,9 @@ import java.lang.reflect.Type;
 import java.time.ZonedDateTime;
 import java.util.List;
 
+/**
+ * Класс, отвечающий за сохранение и загрузку JSON.
+ */
 public class ParserJson {
     private static String filePath = System.getenv("WORK_FILE_PATH");
     private static GsonBuilder builder = new GsonBuilder();

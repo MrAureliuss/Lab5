@@ -2,6 +2,9 @@ package Commands.Utils.Readers.PrimitiveAndReferenceReaders;
 
 import java.util.Scanner;
 
+/**
+ * Считыватель строк.
+ */
 public class StringReader {
     public static String read(String messageForConsole, boolean canBeNull) {
         Scanner in = new Scanner(System.in);

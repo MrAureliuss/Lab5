@@ -3,6 +3,9 @@ package Commands.ConcreteCommands;
 import Commands.Command;
 import Commands.CommandReceiver;
 
+/**
+ * Конкретная команда подсчета миниммального семестра.
+ */
 public class MinBySemesterEnum extends Command {
     private final CommandReceiver commandReceiver;
 

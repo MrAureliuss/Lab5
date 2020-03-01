@@ -7,6 +7,9 @@ import Commands.Utils.JSON.ParserJson;
 
 import java.io.*;
 
+/**
+ * Ресивер(получатель), описывает основную логику команд, при надобности делегирует ее консольному менеджеру.
+ */
 public class CommandReceiver {
     private final CommandInvoker commandInvoker;
 

@@ -6,6 +6,9 @@ import Commands.CommandInvoker;
 import Commands.CommandReceiver;
 import Commands.ConcreteCommands.*;
 
+/**
+ * Класс управления и регистрацией консолью.
+ */
 class ConsoleManager {
     void startInteractiveMode() throws IOException {
         CommandInvoker commandInvoker = new CommandInvoker();
