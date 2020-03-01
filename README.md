@@ -9,7 +9,7 @@
 * [Заключение.](#Заключение)
 
 ### Задание лабораторной работы <a name="Задание"></a>
-![Alt-текст](https://i.imgur.com/qo6y1nv.jpg)
+![Alt-текст](https://i.imgur.com/lpShRKQ.jpg)
 ![Alt-текст](https://i.imgur.com/7o0ADIy.jpg)
 ![Alt-текст](https://i.imgur.com/4AqAKRX.jpg)
 [Содержание :arrow_up:](#Содержание)
