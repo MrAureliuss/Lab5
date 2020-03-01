@@ -27,6 +27,7 @@ class ConsoleManager {
         commandInvoker.register("max_by_group_admin", new MaxByGroupAdmin(commandReceiver));
         commandInvoker.register("count_by_group_admin", new CountByGroupAdmin(commandReceiver));
         commandInvoker.register("execute_script", new ExecuteScript(commandReceiver));
+        commandInvoker.register("save", new Save(commandReceiver));
 
         try(Scanner scanner = new Scanner(System.in)) {
             while (scanner.hasNextLine()) {

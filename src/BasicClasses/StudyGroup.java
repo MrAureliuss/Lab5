@@ -1,5 +1,7 @@
 package BasicClasses;
 
+import Collection.IDGenerator;
+
 import java.time.ZonedDateTime;
 import java.util.Random;
 
@@ -14,7 +16,7 @@ public class StudyGroup implements Comparable<StudyGroup> {
     private Person groupAdmin; //Поле может быть null
 
     public StudyGroup(String name, Coordinates coordinates, Integer studentsCount, FormOfEducation formOfEducation, Semester semesterEnum, Person groupAdmin) {
-        this.id = new Random().nextInt(Integer.MAX_VALUE);
+        this.id = IDGenerator.generateID();
         this.name = name;
         this.coordinates = coordinates;
         this.creationDate = java.time.ZonedDateTime.now();
@@ -78,6 +80,10 @@ public class StudyGroup implements Comparable<StudyGroup> {
 
     public void setGroupAdmin(Person groupAdmin) {
         this.groupAdmin = groupAdmin;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     @Override

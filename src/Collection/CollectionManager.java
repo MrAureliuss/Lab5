@@ -14,11 +14,16 @@ public class CollectionManager {
         if (linkedList == null) { linkedList = new LinkedList<>(); creationDate = ZonedDateTime.now(); }
     }
 
-    static LinkedList<StudyGroup> getLinkedList() {
+    public static LinkedList<StudyGroup> getLinkedList() {
         return linkedList;
     }
 
     public static void add(StudyGroup studyGroup) {
+        linkedList.add(studyGroup);
+    }
+
+    public static void addJsonObject(StudyGroup studyGroup) {
+        studyGroup.setId(IDGenerator.generateID(studyGroup.getId()));
         linkedList.add(studyGroup);
     }
 
