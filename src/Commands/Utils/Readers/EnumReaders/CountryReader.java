@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Считыватель страны.
  */
 public class CountryReader {
-    private static boolean checkExist(String toContains) {
+    public static boolean checkExist(String toContains) {
         return Arrays.stream(Country.values()).anyMatch((country) -> country.name().equals(toContains));
     }
 

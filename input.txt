@@ -1,1 +1,12 @@
-show add
+add
+chechnya
+1
+1.0
+223
+
+THIRD
+vitalik
+213
+RED
+RED
+USA

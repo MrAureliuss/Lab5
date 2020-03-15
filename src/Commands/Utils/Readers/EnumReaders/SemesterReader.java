@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Считыватель Семестра.
  */
 public class SemesterReader {
-    private static boolean checkExist(String toContains) {
+    public static boolean checkExist(String toContains) {
         return Arrays.stream(Semester.values()).anyMatch((semester) -> semester.name().equals(toContains));
     }
 

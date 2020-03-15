@@ -4,6 +4,8 @@ import BasicClasses.*;
 import Commands.Utils.Readers.EnumReaders.*;
 import Commands.Utils.Readers.PrimitiveAndReferenceReaders.*;
 
+import java.util.ArrayList;
+
 /**
  * Классб содержащий методы для создания группы и человека.
  */
@@ -27,5 +29,34 @@ public class ElementCreator {
         Country nationality = CountryReader.read("Введите национальность Админа группы", false);
 
         return new Person(groupAdminName, height, eyeColor, hairColor, nationality);
+    }
+
+    public static StudyGroup createScriptStudyGroup(ArrayList<String> parameters) {
+        if (validateArray(parameters)) {
+            FormOfEducation formOfEducation = null;
+            if (!parameters.get(4).isEmpty()) { formOfEducation = FormOfEducation.valueOf(parameters.get(4)); }
+            return new StudyGroup(parameters.get(0),
+                    new Coordinates(Integer.parseInt(parameters.get(1)), Float.parseFloat(parameters.get(2))),
+                    Integer.parseInt(parameters.get(3)),
+                    formOfEducation,
+                    Semester.valueOf(parameters.get(5)),
+                    new Person(parameters.get(6), Integer.parseInt(parameters.get(7)), Color.valueOf(parameters.get(8)), Color.valueOf(parameters.get(9)), Country.valueOf(parameters.get(10))));
+        } else { System.out.println("Один из параметров не соответствует требованиям."); }
+
+        return null;
+    }
+
+    private static boolean validateArray(ArrayList<String> parameters) {
+        return !parameters.get(0).isEmpty()
+                && Integer.parseInt(parameters.get(1)) < 511
+                && Float.parseFloat(parameters.get(2)) > -653f
+                && Integer.parseInt(parameters.get(3)) > 0
+                && (FormOfEducationReader.checkExist(parameters.get(4)) || parameters.get(4).isEmpty())
+                && !parameters.get(5).isEmpty()
+                && !parameters.get(6).isEmpty()
+                && Integer.parseInt(parameters.get(7)) > 0
+                && ColorReader.checkExist(parameters.get(8))
+                && ColorReader.checkExist(parameters.get(9))
+                && CountryReader.checkExist(parameters.get(10));
     }
 }

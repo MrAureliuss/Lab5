@@ -1,11 +1,15 @@
 package Commands;
 
+import BasicClasses.StudyGroup;
 import Collection.CollectionManager;
 import Collection.CollectionUtils;
 import Commands.Utils.Creaters.ElementCreator;
 import Commands.Utils.JSON.ParserJson;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Ресивер(получатель), описывает основную логику команд, при надобности делегирует ее консольному менеджеру.
@@ -93,9 +97,34 @@ public class CommandReceiver {
     }
 
     public void executeScript(String path) {
-        try (DataInputStream dataInputStream = new DataInputStream(new BufferedInputStream(new FileInputStream("C:\\Users\\avelok\\IdeaProjects\\Lab5\\input.txt")))) {
-            while (dataInputStream.available() != 0) {
-                commandInvoker.executeCommand(dataInputStream.readLine().split(" "));
+        String line;
+        String command;
+        ArrayList<String> parameters = new ArrayList<String>();
+        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new BufferedInputStream(new FileInputStream(path)), StandardCharsets.UTF_8))) {
+            while ((line = bufferedReader.readLine()) != null) {
+                if (line.matches("add|update|remove_lower|remove_greater")) {
+                    command = line;
+                    for (int i = 0; i < 11; i++) {
+                        if (line != null) {
+                            line = bufferedReader.readLine();
+                            parameters.add(line);
+                        } else { System.out.println("Не хватает параметров для создания объекта."); break; }
+                    }
+                    StudyGroup studyGroup = ElementCreator.createScriptStudyGroup(parameters);
+                    switch (command) {
+                        case "add":
+                            CollectionManager.add(studyGroup);
+                            break;
+                        case "update":
+                            CollectionManager.update(studyGroup, Integer.parseInt(command.split(" ")[1]));
+                        case "remove_greater":
+                            CollectionManager.remove_greater(studyGroup);
+                            break;
+                        case "remove_lower":
+                            CollectionManager.remove_lower(studyGroup);
+                            break;
+                    }
+                } else { commandInvoker.executeCommand(line.split(" ")); }
             }
         } catch (IOException e) {
             System.out.println("Ошибка! " + e.getMessage());
