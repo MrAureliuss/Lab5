@@ -3,13 +3,13 @@ package Commands;
 import BasicClasses.StudyGroup;
 import Collection.CollectionManager;
 import Collection.CollectionUtils;
+import Commands.ConcreteCommands.ExecuteScript;
 import Commands.Utils.Creaters.ElementCreator;
 import Commands.Utils.JSON.ParserJson;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Ресивер(получатель), описывает основную логику команд, при надобности делегирует ее консольному менеджеру.
@@ -38,6 +38,10 @@ public class CommandReceiver {
         System.out.println("Элемент добавлен в коллекцию.");
     }
 
+    /**
+     *
+     * @param ID - апдейт элемента по ID.
+     */
     public void update(String ID) {
         Integer groupId;
         try {
@@ -49,6 +53,10 @@ public class CommandReceiver {
         }
     }
 
+    /**
+     *
+     * @param ID - удаление по ID.
+     */
     public void remove_by_id(String ID) {
         Integer groupId;
         try {
@@ -96,10 +104,14 @@ public class CommandReceiver {
         CollectionManager.countByGroupAdmin(ElementCreator.createPerson());
     }
 
+    /**
+     *
+     * @param path - Путь до файла, который будем считывать.
+     */
     public void executeScript(String path) {
         String line;
         String command;
-        ArrayList<String> parameters = new ArrayList<String>();
+        ArrayList<String> parameters = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new BufferedInputStream(new FileInputStream(path)), StandardCharsets.UTF_8))) {
             while ((line = bufferedReader.readLine()) != null) {
                 if (line.matches("add|update|remove_lower|remove_greater")) {
@@ -124,13 +136,18 @@ public class CommandReceiver {
                             CollectionManager.remove_lower(studyGroup);
                             break;
                     }
-                } else { commandInvoker.executeCommand(line.split(" ")); }
+                } else if (line.split(" ")[0].equals("execute_script")
+                        && line.split(" ")[1].equals(ExecuteScript.getPath())) { System.out.println("Пресечена попытка рекурсивного вызова скрипта."); }
+                else { commandInvoker.executeCommand(line.split(" ")); }
             }
         } catch (IOException e) {
             System.out.println("Ошибка! " + e.getMessage());
         }
     }
 
+    /**
+     * Сохранение коллекции
+     */
     public void save() {
         ParserJson.collectionToJson();
     }
