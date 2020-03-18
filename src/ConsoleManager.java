@@ -1,10 +1,10 @@
-import java.io.IOException;
-import java.util.Scanner;
-
 import Collection.CollectionManager;
 import Commands.CommandInvoker;
 import Commands.CommandReceiver;
 import Commands.ConcreteCommands.*;
+
+import java.io.IOException;
+import java.util.Scanner;
 
 /**
  * Класс управления и регистрацией консолью.
@@ -34,7 +34,7 @@ class ConsoleManager {
 
         try(Scanner scanner = new Scanner(System.in)) {
             while (scanner.hasNextLine()) {
-                commandInvoker.executeCommand(scanner.nextLine().split(" "));
+                commandInvoker.executeCommand(scanner.nextLine().trim().split(" "));
             }
         }
     }

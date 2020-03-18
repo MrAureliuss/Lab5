@@ -15,9 +15,13 @@ public class ExecuteScript extends Command {
     }
 
     @Override
-    protected void execute(String[] args) {
-        if (args.length == 2) { path = args[1]; commandReceiver.executeScript(args[1]); }
-        else { System.out.println("Некорректное количество аргументов. Для справки напишите help."); }
+    protected void execute(String[] args) throws StackOverflowError {
+        try {
+            if (args.length == 2) { path = args[1]; commandReceiver.executeScript(args[1]); }
+            else { System.out.println("Некорректное количество аргументов. Для справки напишите help."); }
+        } catch (StackOverflowError ex) {
+            System.out.println("Ошибка! Обнаружен выход за пределы стека.");
+        }
     }
 
     @Override
