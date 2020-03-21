@@ -47,9 +47,9 @@
      ```
      + Запускает Scanner при помощи try с ресурсами и передает инвокеру введеную команду с аргументом.
      ```Java
-       try(Scanner scanner = new Scanner(System.in)) {  // Собственно try с ресурсами.
+       try (Scanner scanner = new Scanner(System.in)) {  // Собственно try с ресурсами.
             while (scanner.hasNextLine()) {  // Читаем каждую строку в цикле. Метод hasNextLine гарантирует нам, что мы сможем читать даже пустые строки.
-                commandInvoker.executeCommand(scanner.nextLine().split(" "));  // Разделяем введенную команду на части(на саму команду и аргумент для нее.)
+                commandInvoker.executeCommand(scanner.nextLine().trim().split(" "));  // Разделяем введенную команду на части(на саму команду и аргумент для нее.)
             }
         }
      ```
