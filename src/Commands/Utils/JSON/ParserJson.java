@@ -2,13 +2,17 @@ package Commands.Utils.JSON;
 
 import BasicClasses.StudyGroup;
 import Collection.CollectionManager;
-import com.google.gson.*;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.TypeAdapter;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
-import java.io.*;
-import java.lang.reflect.Type;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Reader;
 import java.time.ZonedDateTime;
 import java.util.List;
 
@@ -56,6 +60,8 @@ public class ParserJson {
                 System.out.println("Недостаточно прав для открытия файла.");
             } catch (NullPointerException e) {
                 System.out.println("В файле нет объектов");
+            } catch (com.google.gson.JsonSyntaxException e) {
+                System.out.println("Ошибка в содержании файла " + e.getMessage());
             }
         } else { System.out.println("Переменная окружения не выставлена"); }
     }

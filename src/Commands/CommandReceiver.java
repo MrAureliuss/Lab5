@@ -114,7 +114,7 @@ public class CommandReceiver {
         ArrayList<String> parameters = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new BufferedInputStream(new FileInputStream(path)), StandardCharsets.UTF_8))) {
             while ((line = bufferedReader.readLine()) != null) {
-                if (line.matches("add|update|remove_lower|remove_greater")) {
+                if (line.split(" ")[0].matches("add|update|remove_lower|remove_greater")) {
                     command = line;
                     for (int i = 0; i < 11; i++) {
                         if (line != null) {
@@ -123,7 +123,7 @@ public class CommandReceiver {
                         } else { System.out.println("Не хватает параметров для создания объекта."); break; }
                     }
                     StudyGroup studyGroup = ElementCreator.createScriptStudyGroup(parameters);
-                    switch (command) {
+                    switch (command.split(" ")[0]) {
                         case "add":
                             CollectionManager.add(studyGroup);
                             break;
